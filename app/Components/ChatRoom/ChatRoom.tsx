@@ -13,7 +13,6 @@ interface ChatMessage {
 export const ChatRoom = () => {
     const [chats, setChats] = useState<ChatMessage[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
-    const [genAI, setGenAI] = useState<GoogleGenerativeAI | null>(null);
     const [model, setModel] = useState<any>(null);
 
     const chatContainerRef = useRef<HTMLDivElement>(null)
@@ -21,7 +20,6 @@ export const ChatRoom = () => {
     useEffect(() => {
         const apiKey = process.env.NEXT_PUBLIC_GEMINI_API ?? '';
         const aiInstance = new GoogleGenerativeAI(apiKey);
-        setGenAI(aiInstance);
         setModel(aiInstance.getGenerativeModel({ model: "gemini-1.5-flash" }));
     }, []);
 
