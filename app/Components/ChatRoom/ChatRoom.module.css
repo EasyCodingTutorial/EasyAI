@@ -1,4 +1,4 @@
-.ChatRoom{
+.ChatRoom {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,20 +7,20 @@
     margin: auto;
     padding: 30px;
     border-radius: 8px;
+    box-sizing: border-box;
 }
 
-.ChatHistory{
-flex: 1;
-overflow-y: auto;
-display: flex;
-flex-direction: column;
-padding: 10px;
-gap: 10px;
-width: 100%;
-max-width: 700px;
+.ChatHistory {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
 }
 
-.AIMESSAGE{
+.AIMESSAGE {
     align-self: flex-start;
     padding: 10px 25px;
     border-radius: 10px;
@@ -30,7 +30,8 @@ max-width: 700px;
     overflow-wrap: break-word;
     white-space: pre-wrap;
 }
-.UserMESSAGE{
+
+.UserMESSAGE {
     align-self: flex-end;
     color: #fff;
     padding: 10px 15px;
@@ -42,28 +43,29 @@ max-width: 700px;
     white-space: pre-wrap;
 }
 
-.ChatInput{
+.ChatInput {
     display: flex;
     justify-content: center;
     align-items: center;
     position: sticky;
     bottom: 0;
-    width: 700px;
+    width: 100%;
     background: #191616;
     padding: 10px;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
-
-.ChatInput form{
+.ChatInput form {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-.ChatInput textarea{
+.ChatInput textarea {
     background: none;
-    width: 600px;
+    flex: 1;
     border: none !important;
     outline: none;
     padding: 20px;
@@ -72,7 +74,8 @@ max-width: 700px;
     height: 12rem !important;
     resize: none;
 }
-.SendBtn{
+
+.SendBtn {
     font-size: 20px;
     cursor: pointer;
     height: 40px;
@@ -81,9 +84,47 @@ max-width: 700px;
     color: #000;
     border: none !important;
     border-radius: 999px;
+    margin-left: 10px;
 }
 
-.Thinking{
+.Thinking {
     color: #777;
     padding: 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .ChatRoom {
+        padding: 20px;
+    }
+
+    .ChatInput textarea {
+        font-size: 16px;
+        height: 8rem !important;
+    }
+
+    .ChatInput {
+        padding: 5px;
+    }
+
+    .SendBtn {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ChatRoom {
+        padding: 10px;
+    }
+
+    .ChatInput textarea {
+        font-size: 14px;
+        height: 6rem !important;
+    }
+
+    .SendBtn {
+        height: 30px;
+        width: 30px;
+    }
 }
